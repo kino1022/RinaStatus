@@ -1,0 +1,19 @@
+{
+    "name": "RinaStatus",
+    "rootNamespace": "RinaStatus",
+    "references": [
+        "GUID:b0214a6008ed146ff8f122a6a9c2f6cc",
+        "GUID:77221876cc6b8244180b96e320b1bcd4",
+        "GUID:92b68a3bbc8c0486b9718b9503336cc4",
+        "GUID:a19118f8cbf74819ace949986f408365"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
