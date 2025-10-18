@@ -7,7 +7,7 @@ namespace RinaStatus.Installer.Manager {
     /// <summary>
     /// ステータスのシステムを管理するマネージャークラスに対して利用するインストーラー
     /// </summary>
-    public class ManagerInstaller : IInstaller {
+    public class StatusManagerInstaller : IInstaller {
         
         public void Install(IContainerBuilder builder) {
 
