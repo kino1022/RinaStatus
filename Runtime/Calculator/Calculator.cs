@@ -1,3 +1,5 @@
+using System;
+
 namespace RinaStatus.Calculator {
     
     public interface ICalculator<ValueType> {
@@ -27,6 +29,7 @@ namespace RinaStatus.Calculator {
         bool Less(ValueType left, ValueType right);
     }
 
+    [Serializable]
     public class IntCalculator : ICalculator<int> {
         
         public int Add (int left, int right) => left + right;
@@ -48,6 +51,7 @@ namespace RinaStatus.Calculator {
         public bool Less(int left, int right) => left < right;
     }
     
+    [Serializable]
     public class FloatCalculator : ICalculator<float> {
         
         public float Add (float left, float right) => left + right;
