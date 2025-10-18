@@ -17,6 +17,7 @@ namespace RinaStatus {
         [TitleGroup("参照")]
         [OdinSerialize]
         [ReadOnly]
+        [LabelText("計算")]
         protected ICalculator<ValueType> m_calculator;
 
         public ReadOnlyReactiveProperty<ValueType> Value => GetValue();

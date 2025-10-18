@@ -17,6 +17,7 @@ namespace RinaStatus {
         [TitleGroup("参照")]
         [OdinSerialize]
         [ReadOnly]
+        [LabelText("補正システム")]
         protected ICorrectionManager m_correctionManager;
         
         protected override ReadOnlyReactiveProperty<ValueType> GetValue() => m_correctedValue.Value;
