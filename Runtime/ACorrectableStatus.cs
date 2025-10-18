@@ -15,6 +15,7 @@ namespace RinaStatus {
         protected IValueModule<ValueType> m_correctedValue;
         
         [TitleGroup("参照")]
+        
         [OdinSerialize]
         [ReadOnly]
         [LabelText("補正システム")]
