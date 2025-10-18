@@ -39,6 +39,10 @@ namespace RinaStatus.Runtime.Value {
         private ValueType InspectorValue => m_value.Value;
         
         #endif
+
+        public ValueModule() {
+            m_value = new ReactiveProperty<ValueType>();
+        }
         
         public void Set(ValueType next) => m_value.Value = next;
         
