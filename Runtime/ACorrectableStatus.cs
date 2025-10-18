@@ -11,7 +11,7 @@ namespace RinaStatus {
         
         [TitleGroup("値")]
         [OdinSerialize]
-        [LabelText("補正後の値")]
+        [Title("補正後の値")]
         protected IValueModule<ValueType> m_correctedValue;
         
         [TitleGroup("参照")]
