@@ -1,8 +1,10 @@
+using System;
 using R3;
 using RinaCorrection;
 using RinaStatus.Runtime.Value;
 using Sirenix.OdinInspector;
 using Sirenix.Serialization;
+using VContainer;
 
 namespace RinaStatus {
     public abstract class ACorrectableStatus<ValueType> : AStatus<ValueType>, ICorrectableStatus<ValueType> {
@@ -10,7 +12,7 @@ namespace RinaStatus {
         [TitleGroup("値")]
         [OdinSerialize]
         [LabelText("補正後の値")]
-        protected ValueModule<ValueType> m_correctedValue;
+        protected IValueModule<ValueType> m_correctedValue;
         
         [TitleGroup("参照")]
         [OdinSerialize]
@@ -21,6 +23,10 @@ namespace RinaStatus {
 
         public override void Set(ValueType next) {
             base.Start();
+
+            m_correctedValue = m_resolver
+                .Resolve<IValueModule<ValueType>>() ?? throw new ArgumentNullException();
+            
             var nextCorrected = CalculateCorrection(m_rawValue.Value.CurrentValue);
             m_correctedValue.Set(nextCorrected);
         }

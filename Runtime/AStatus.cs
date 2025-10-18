@@ -30,9 +30,11 @@ namespace RinaStatus {
 
         protected virtual void Start() {
             
-            m_rawValue = m_resolver.Resolve<IValueModule<ValueType>>() ?? throw new ArgumentNullException();
+            m_rawValue = m_resolver
+                .Resolve<IValueModule<ValueType>>() ?? throw new ArgumentNullException();
             
-            m_calculator = m_resolver.Resolve<ICalculator<ValueType>>() ?? throw new ArgumentNullException();
+            m_calculator = m_resolver
+                .Resolve<ICalculator<ValueType>>() ?? throw new ArgumentNullException();
             
         }
 
