@@ -42,7 +42,7 @@ namespace RinaStatus {
         private ValueType CalculateCorrection(ValueType rawValue) {
             dynamic value = rawValue;
             dynamic nextCorrected = m_correctionManager.Apply(value);
-            return nextCorrected;
+            return (ValueType) nextCorrected;
         }
     }
 }
