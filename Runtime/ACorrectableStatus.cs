@@ -21,13 +21,19 @@ namespace RinaStatus {
         
         protected override ReadOnlyReactiveProperty<ValueType> GetValue() => m_correctedValue.Value;
 
-        public override void Set(ValueType next) {
+        protected override void Start() {
             base.Start();
+            
+            m_correctionManager = m_resolver.Resolve<ICorrectionManager>();
+            
+            m_correctedValue = m_resolver.Resolve<IValueModule<ValueType>>() ?? throw new ArgumentNullException();
+        }
 
-            m_correctedValue = m_resolver
-                .Resolve<IValueModule<ValueType>>() ?? throw new ArgumentNullException();
+        public override void Set(ValueType next) {
+            base.Set(next);
             
             var nextCorrected = CalculateCorrection(m_rawValue.Value.CurrentValue);
+            
             m_correctedValue.Set(nextCorrected);
         }
 
